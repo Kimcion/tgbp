@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Invoice - TGBP</title>
+    <title>Invoice-Penilla tea-ny cafe</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
@@ -20,29 +20,28 @@
 <body>
 
     <?php
-        const PAGE = 'invoice';
-        require_once 'partials/navbar.php';
 
-        // prepare item prices (per kilogram)
+        // prepare item prices (per liters)
         $item_prices = [
-            'Turingan'   => 260,
-            'Galunggong' => 180,
-            'Bangus'     => 175,
-            'Pusit'      => 480
+            
+            'gsm blue' => 75,
+             'san mig light'=> 50,
+              'san mig apple' => 48,
         ];
 
         // prepare mode prices
         $mode_prices = [
             'Pickup'   => 0,
-            'Delivery' => 20
+            'Delivery' => 80
         ];
 
         // prepare preparation prices
         $preparation_prices = [
-            'Kinuskosan' => 10,
-            'Binadi'     => 15,
-            'Chopped'    => 5
-        ];
+            'gsm blue'  => 65,
+            'san mig light' => 45,
+            'san mig apple' => 35,
+        ];  
+             
 
 
         // get form inputs
@@ -50,7 +49,7 @@
         $address      = strip_tags($_POST['address']);
         $mode         = $_POST['mode'];
         $item         = $_POST['item'];
-        $kilograms    = intval($_POST['kilograms']);
+        $liters    = intval($_POST['high prices']);
         $preparations = [];
         if(isset($_POST['preparations']))
             $preparations = $_POST['preparations'];
@@ -58,7 +57,7 @@
 
         // compute
         $price      = $item_prices[$item];
-        $item_price = $price * $kilograms;
+        $item_price = $price * $liters;
         $mode_price = $mode_prices[$mode];
         $preparations_price = 0;
         foreach ($preparations as $preparation) {
@@ -94,12 +93,12 @@
                 </tr>
                 <tr>
                     <th>Item</th>
-                    <td><?= $item ?> (<b><?= $price ?></b> per kg.)</td>
+                    <td><?= $item ?> (<b><?= $price ?></b> per liter.)</td>
                     <td rowspan="2" class="align-middle" align="right"><?= number_format($item_price, 2) ?></td>
                 </tr>
                 <tr>
                     <th>Weight</th>
-                    <td><b><?= $kilograms ?></b> kg.</td>
+                    <td><b><?= $liters ?></b> liter.</td>
                 </tr>
                 <?php
                     for($i=0; $i<sizeof($preparations); $i++) {
@@ -139,7 +138,7 @@
                     <input type="hidden" name="mode_price" value="<?= $mode_price ?>">
                     <input type="hidden" name="item" value="<?= $item ?>">
                     <input type="hidden" name="price" value="<?= $price ?>">
-                    <input type="hidden" name="kilogram" value="<?= $kilograms ?>">
+                    <input type="hidden" name="liters" value="<?= $liters ?>">
                     <?php foreach ($preparations as $preparation) { ?>
                         <input type="hidden" name="preparations[]" value="<?= $preparation ?>">
                         <input type="hidden" name="preparation_prices[]" value="<?= $preparation_prices[$preparation] ?>">

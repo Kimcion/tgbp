@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Order - TGBP</title>
+    <title>order-Penilla Tea-ny cafe </title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
@@ -19,7 +19,7 @@
     <div class="container mt-3">
         <div class="mb-4">
             <h2>Order</h2>
-            <p>Bakal na kamo... Sana ol!</p>
+            <p>para sa mga taong problimado mina kamo bakal na kamo mag laklak na sana.</p>
         </div>
 
         <form method="POST" action="invoice.php">
@@ -56,17 +56,17 @@
                     <div class="col-sm-6">
                         <label class="text-secondary fw-bold" for="civil-status">Item:</label>
                         <select class="form-control" id="item" name="item">
-                            <option value="Turingan">Turingan</option>
-                            <option value="Galunggong">Galunggong</option>
-                            <option value="Bangus">Bangus</option>
-                            <option value="Pusit">Pusit</option>
+                            <option value="gsm blue">gsm blue</option>
+                            <option value="san mig light">san mig light</option>
+                            <option value="san mig apple</option>
+                            
                         </select>
                     </div>
 
-                    <!-- Kilograms -->
+                    <!-- liters -->
                     <div class="col-sm-6 mt-3 mt-sm-0">
-                        <label class="text-secondary fw-bold" for="full-name">Kilograms:</label>
-                        <input type="number" class="form-control" id="kilograms" name="kilograms" value="1" min="1" max="20">
+                        <label class="text-secondary fw-bold" for="full-name">liters:</label>
+                        <input type="number" class="form-control" id="liters" name="liters" value="1" min="1" max="20">
                     </div>
                 </div>
 
@@ -77,16 +77,16 @@
                 <label class="text-secondary fw-bold mb-2">Preparation:</label>
                 <br>
                 <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="piolo" name="preparations[]" value="Kinuskosan">
-                    <label for="piolo" class="form-check-label">Kinuskosan</label>
+                    <input type="checkbox" class="form-check-input" id="mae" name="preparations[]" value="gsm blue">
+                    <label for="ruffa" class="form-check-label">gsm blue</label>
                 </div>
                 <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="liza" name="preparations[]" value="Binadi">
-                    <label for="liza" class="form-check-label">Binadi</label>
+                    <input type="checkbox" class="form-check-input" id="ara" name="preparations[]" value="san mig light">
+                    <label for="liza" class="form-check-label">san mig light</label>
                 </div>
                 <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="daniel" name="preparations[]" value="Chopped">
-                    <label for="daniel" class="form-check-label">Chopped</label>
+                    <input type="checkbox" class="form-check-input" id="daniel" name="preparations[]" value="san mig apple">
+                    <label for="lara" class="form-check-label">san mig apple</label>
                 </div>
             </div>
 

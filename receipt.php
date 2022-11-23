@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Receipt - TGBP</title>
+    <title>Receipt - penilla tea-ny cafe</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
@@ -54,12 +54,12 @@
                 </tr>
                 <tr>
                     <th>Item</th>
-                    <td><?= $_POST['item'] ?> (<b><?= $_POST['price'] ?></b> per kg.)</td>
-                    <td rowspan="2" class="align-middle" align="right"><?= number_format(($_POST['kilogram'] * $_POST['price']), 2) ?></td>
+                    <td><?= $_POST['item'] ?> (<b><?= $_POST['price'] ?></b> per liter.)</td>
+                    <td rowspan="2" class="align-middle" align="right"><?= number_format(($_POST['liters'] * $_POST['price']), 2) ?></td>
                 </tr>
                 <tr>
                     <th>Weight</th>
-                    <td><b><?= $_POST['kilogram'] ?></b> kg.</td>
+                    <td><b><?= $_POST['liters'] ?></b> liters.</td>
                 </tr>
                 <?php
                     if(isset($_POST['preparations'])) {
@@ -83,7 +83,7 @@
                 </tr>
                 <tr class="table-primary">
                     <th colspan="2" class="py-3">PAYMENT</th>
-                    <td align="right" class="py-3"><b><?= number_format($_POST['payment'], 2) ?></b></td>
+                      <td align="right" class="py-3"><b><?= number_format($_POST['payment'], 2) ?></b></td>
                 </tr>
 
                 <?php
